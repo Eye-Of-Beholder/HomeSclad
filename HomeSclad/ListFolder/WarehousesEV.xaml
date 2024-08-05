@@ -1,0 +1,74 @@
+﻿<Page x:Class="Pennant.ListFolder.WarehousesEV"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="860" d:DesignWidth="1400" 
+      Background="White">
+
+
+    <Grid>
+        <Border 
+                    Background="{DynamicResource MainColor}" Margin="0,-4,0,771"/>
+
+        <Label Content="Взятое из склада оборудование"
+                       Style="{DynamicResource LabelLogoStyle}"
+                       FontSize="30"
+                       Margin="0,35,0,742"/>
+
+
+        <ListView x:Name="EquipmentList" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      MouseRightButtonDown="EquipmentList_MouseRightButtonDown"
+                      MouseLeftButtonDown="EquipmentList_MouseLeftButtonDown" Margin="4,95,8,-2" RenderTransformOrigin="0.5,0.5">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.478"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-2.242"/>
+                </TransformGroup>
+            </ListView.RenderTransform>
+
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="Info" Header="Подробнее" Click="Info_Click"  />
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="310" Height="280" Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="175"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Image Source="{Binding Photo}" 
+                       Stretch="Uniform" Width="330" Height="180"/>
+
+                        <TextBlock Text="{Binding TypeofEquipment.TypeofEquipmentName}" 
+                                           FontSize="18"
+                                 Grid.Row="2" Style="{DynamicResource TextForMenuTBl}" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding Description}"
+                                   Style="{DynamicResource TextBlockStyle}"
+                                   Foreground="Black"
+                                   Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="15"/>
+
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+    </Grid>
+</Page>

@@ -1,0 +1,65 @@
+﻿<Window x:Class="Pennant.WindowFolder.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pennant.WindowFolder"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+       Title="Регистрация" WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True" Height="550" Width="850" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="175"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Image Source="C:\Users\serzh\source\repos\Pennant\Pennant\ImageFolder\ath.png" Grid.ColumnSpan="3" Margin="-3,0,-3,0" Grid.RowSpan="3"/>
+
+        <Image Source="/ImageFolder/logoWhite.png" Margin="105,22,105,2" Grid.Column="1"/>
+
+
+
+
+
+
+
+        <Border Background="White" Grid.Row="1" VerticalAlignment="Center" Padding="30"
+                CornerRadius="20" Height="350" Grid.Column="1">
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="80" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <TextBlock Text="Регистрация" Foreground="#003361" FontSize="30" FontWeight="Bold" Margin="0 0 0 15"/>
+
+                <Button HorizontalAlignment="Right" Content="Авторизация" Background="#003361" Cursor="Hand" Click="Button_Click"/>
+
+                <TextBox x:Name="ButLog" materialDesign:HintAssist.Hint="Введите логин"  BorderBrush="#003361" Height="35" VerticalAlignment="Center"
+                         />
+
+                <PasswordBox x:Name="ButPas" materialDesign:HintAssist.Hint="Введите пароль" BorderBrush="#003361" VerticalContentAlignment="Center"
+                             Height="35"/>
+
+                <PasswordBox x:Name="DubPas" materialDesign:HintAssist.Hint="Повторно введите пароль" BorderBrush="#003361" VerticalContentAlignment="Center"
+                             Height="35"/>
+
+                <Button Content="Зарегистрироваться" Background="#003361" x:Name="Enter" Margin="0 35 0 0"
+                        HorizontalAlignment="Left" Width="440" Height="35" Click="Enter_Click"/>
+            </StackPanel>
+        </Border>
+
+
+
+    </Grid>
+</Window>

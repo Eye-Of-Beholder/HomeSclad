@@ -1,0 +1,38 @@
+﻿<Page x:Class="Pennant.ListFolder.GuidePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pennant.ListFolder"
+      mc:Ignorable="d" 
+       d:DesignHeight="860" d:DesignWidth="1400" 
+      Background="White">
+
+    <Grid>
+        <Border 
+                    Background="{DynamicResource MainColor}" Margin="0,-4,0,771"/>
+
+        <Label Content="Справочник"
+                       Style="{DynamicResource LabelLogoStyle}"
+                       FontSize="30"
+                       Margin="0,35,0,742"/>
+
+        <TextBlock Text="Добавить должность" FontSize="35" Foreground="Black" Style="{DynamicResource LogoTextBlockStyle}" Height="52" Width="377"
+               HorizontalAlignment="Left" Margin="71,156,0,0" VerticalAlignment="Top"/>
+       
+        <TextBox x:Name="PostTextBox"
+                 FontSize="33" Width="390" Margin="73,213,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 />
+
+        <TextBlock Text="Добавить Кабинет" FontSize="35" Foreground="Black" Style="{DynamicResource LogoTextBlockStyle}" Height="52" Width="377"
+               HorizontalAlignment="Left" Margin="848,156,0,0" VerticalAlignment="Top"/>
+       
+        <TextBox x:Name="CabTextBox" FontSize="33" Width="390" Margin="842,213,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <Button Content="Добавить" HorizontalContentAlignment="Center" FontSize="25" Style="{DynamicResource MainButtonStyle}" x:Name="Enter"  
+            Click="Enter_Click" Margin="565,700,565,110" Cursor="Hand"/>
+
+    </Grid>
+</Page>

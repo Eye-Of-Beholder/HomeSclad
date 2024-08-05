@@ -1,0 +1,123 @@
+﻿<Window x:Class="Pennant.WindowFolder.InfoWindow.CustomInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pennant.WindowFolder.InfoWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True" Background="#80000000"
+        Height="950" Width="1750"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <Border Background="White" VerticalAlignment="Top" Padding="30"
+                CornerRadius="20" Height="798" Margin="325,0,367,0" Grid.RowSpan="14" Grid.Row="1">
+
+            <Image Source="{Binding Photo}" Margin="2,136,577,136"/>
+
+        </Border>
+
+        <Image Source="/ImageFolder/ExitBlue.png" 
+               MouseDown="Image_MouseDown" Margin="1324,12,383,109" Grid.Row="1"/>
+
+
+        <TextBlock Text="Подробная информация о сотруднике" Grid.Row="1"
+           FontSize="45" Margin="349,0,0,0"
+           Style="{DynamicResource TextBlockButton}"
+           Foreground="{DynamicResource MainColor}" Height="64" 
+           Width="871"/>
+
+        <TextBlock Text="Должность:" Grid.Row="4"
+           FontSize="25" Margin="820,0,0,0"
+           Foreground="Black" 
+           Style="{DynamicResource TextBlockButton }"
+           Height="34" Width="146"/>
+
+        <TextBlock Text="{Binding PostInfo}" x:Name="PostInfo"
+           FontSize="25" Grid.Row="4"
+           Foreground="Black" Margin="968,6,456,44" Grid.RowSpan="2"/>
+
+        <TextBlock Text="Эл.почта:" Grid.Row="6"
+           FontSize="25" Margin="820,12,0,0"
+           Foreground="Black" 
+           Style="{DynamicResource TextBlockButton }"
+           Height="34" Width="146" VerticalAlignment="Top"/>
+
+        <TextBlock Text="{Binding EmailCust}" x:Name="MailInfo"
+           FontSize="25" Grid.Row="6"
+           Foreground="Black" Margin="936,8,488,46" Grid.RowSpan="2"/>
+
+        <TextBlock Text="Номер телефона:" Grid.Row="8"
+           FontSize="25" Margin="819,10,0,0"
+           Foreground="Black" 
+           Style="{DynamicResource TextBlockButton }"
+           Height="34" Width="212" VerticalAlignment="Top"/>
+
+        <TextBlock Text="{Binding PhoneCust}" x:Name="PhoneInfo"
+           FontSize="25" Grid.Row="8"
+           Foreground="Black" Margin="1034,7,390,43" Grid.RowSpan="2"/>
+
+        <TextBlock Text="Пол:" Grid.Row="10"
+           FontSize="25" Margin="819,0,0,0"
+           Foreground="Black" 
+           Style="{DynamicResource TextBlockButton }"
+           Height="34" Width="70"/>
+
+        <TextBlock Text="{Binding GenderInfo}" 
+           x:Name="GenderInfo"
+           FontSize="25" Grid.Row="10"
+           Foreground="Black" Margin="876,5,548,49" Grid.RowSpan="2"/>
+
+        <TextBlock Text="Номер кабинета:" Grid.Row="11"
+           FontSize="25" Margin="817,56,0,0"
+           Foreground="Black" 
+           Style="{DynamicResource TextBlockButton }"
+           Height="34" Width="215" Grid.RowSpan="2"
+           VerticalAlignment="Top"/>
+
+        <TextBlock Text="{Binding NumCabInfo}"
+           x:Name="NumCabInfo"
+           FontSize="25" Grid.Row="12"
+           Foreground="Black" Margin="1026,2,459,0"/>
+
+        <TextBlock Grid.Row="2" FontSize="25"
+           Margin="820,0,387,0" 
+           Foreground="Black" >
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} {1} {2}">
+                    <Binding Path="SurnameCust" />
+                    <Binding Path="NameCust"/>
+                    <Binding Path="PatronomycCust"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+
+
+
+    </Grid>
+</Window>

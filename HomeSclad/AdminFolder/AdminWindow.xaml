@@ -1,0 +1,99 @@
+﻿<Window x:Class="Pennant.AdminFolder.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+         WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True" 
+        Height="950" Width="1750" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100" />
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Border Background="{DynamicResource MainColor}" 
+                Grid.ColumnSpan="6" Grid.RowSpan="2"/>
+
+        <Image Source="/ImageFolder/IconExit (2).png" 
+               Grid.Column="4"
+               x:Name="ExitIcon"
+               MouseDown="ExitIcon_MouseDown" Margin="14,12,16,25" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+
+        <Image Source="/ImageFolder/IconSvor.png" Grid.Column="3" 
+               Margin="20,10,0,22"
+               x:Name="Svor"
+               MouseDown="Svor_MouseDown" Grid.RowSpan="2"/>
+
+        <Border Background="{DynamicResource MainColor}"
+                Padding="0" Grid.ColumnSpan="2" Grid.Row="2"
+                Grid.RowSpan="3" Cursor=""/>
+
+
+
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical" Margin="0,0,0,88">
+            <Button Foreground="White" Name="CustListBtn" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2" Grid.Row="1" Style="{DynamicResource MainButtonStyle}" Cursor="Hand" Click="CustListBtn_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/ImageFolder/IconUser.png" Height="24" Width="24"/>
+                    <TextBlock Text="Список сотрудников" Style="{DynamicResource TextBlockButton}"/>
+                </StackPanel>
+            </Button>
+
+            <Button Style="{DynamicResource MainButtonStyle}" Foreground="White" FontSize="13" Background="{x:Null}" BorderBrush="{x:Null}" x:Name="AddCust" Click="AddCust_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/ImageFolder/IconEmployee.png" Height="26" Width="25"/>
+                    <TextBlock Text="Добавить сотрудника" Style="{DynamicResource TextBlockButton}"/>
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource MainButtonStyle}" Foreground="White" FontSize="13" 
+                    Background="{x:Null}" BorderBrush="{x:Null}" x:Name="Sprav" Click="Sprav_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/ImageFolder/sheet.png" Height="26" Width="25"/>
+                    <TextBlock Text="Справочник" Style="{DynamicResource TextBlockButton}"/>
+                </StackPanel>
+            </Button>
+
+            <!-- Переместите кнопку выхода здесь ниже остальных -->
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Cursor="">
+            <Button Style="{DynamicResource MainButtonStyle}" Foreground="White" FontSize="13" Background="{x:Null}" BorderBrush="{x:Null}"
+                    x:Name="Exit" Click="Exit_Click" Width="294" Height="46">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/ImageFolder/Exit60.png"  Height="24" Width="24"/>
+                    <TextBlock Text="Выйти" Style="{DynamicResource TextBlockButton}"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+
+        <Frame Name="MainFrameAdmin"
+                   Grid.Column="2" Grid.Row="2" NavigationUIVisibility="Hidden" Margin="0,0,0,10" Grid.RowSpan="3" HorizontalAlignment="Left" Width="1430" Grid.ColumnSpan="4"/>
+        <Image x:Name="BackIm"
+               Style="{DynamicResource ClickableIconImageStyle}"
+               Source="/ImageFolder/Group.png"
+               Grid.Column="1"
+               Grid.Row="1"
+               Grid.RowSpan="2"/>
+
+
+
+    </Grid>
+</Window>
